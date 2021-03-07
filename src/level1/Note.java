@@ -1,7 +1,7 @@
 package level1;
 
 public class Note {
-
+	
 	public static void main(String[] args) {
 		int n = 45;
 		String radix = ""; 
