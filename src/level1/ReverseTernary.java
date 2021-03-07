@@ -14,7 +14,7 @@ public class ReverseTernary {
 		String rTernary = "";
 		
 		while(n >= 3) {											//3진법 변환
-			rTernary += (n % 3) + "";							
+			rTernary += (n % 3)+"";							
 			n /= 3;
 		}
 		rTernary += n;											//마지막 몫 더해주기.
