@@ -7,9 +7,8 @@ public class CountPAndY {
 	 * 프로그래머스 Level 1 
 	 * 문자열 내 p와 y의 개수
 	 * https://programmers.co.kr/learn/courses/30/lessons/12916
-	 * @param args
 	 */
-	public static boolean solution(String s) {
+	public boolean solution(String s) {
 		// 1.p, y같으면 true, 아니면 false
 		// 2.모두 없는 경우 true
 		// 3.대소문자는 구별하지 않는다. o
