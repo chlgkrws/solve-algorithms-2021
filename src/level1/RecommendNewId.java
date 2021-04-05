@@ -6,15 +6,28 @@ public class RecommendNewId {
 	 * https://programmers.co.kr/learn/courses/30/lessons/72410?language=java
 	 */
 	public String solution(String new_id) {
-
-		new_id = new_id.toLowerCase(); 							
-		new_id = new_id.replaceAll("[^a-z0-9-_.]", ""); 		
-		new_id = new_id.replaceAll("[.]+", "."); 				
+		
+		//1단계 
+		new_id = new_id.toLowerCase(); 	
+		
+		//2단계
+		new_id = new_id.replaceAll("[^a-z0-9-_.]", ""); 
+		
+		//3단계
+		new_id = new_id.replaceAll("[.]+", "."); 	
+		
+		//4단계
 		new_id = new_id.charAt(0) == '.' ? new_id.substring(1) : new_id;
 		new_id = new_id.length() > 0 && new_id.charAt(new_id.length() - 1) == '.' ? new_id.substring(0, new_id.length() - 1) : new_id;
+		
+		//5단계
 		new_id = new_id.equals("") ? "a" : new_id;
+		
+		//6단계
 		new_id = new_id.length() >= 16 ? new_id.substring(0, 15) : new_id;
 		new_id = new_id.charAt(new_id.length() - 1) == '.' ? new_id.substring(0, new_id.length() - 1) : new_id;
+		
+		//7단계
 		while(new_id.length() < 3) {
 			new_id += new_id.charAt(new_id.length() - 1);
 		}
