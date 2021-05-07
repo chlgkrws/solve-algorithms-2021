@@ -18,8 +18,8 @@ public class Printer {
 		//큐		  : docs(위치, 중요도)를 저장
 		int answer = 1;
 		
-		PriorityQueue<Integer> importances = new PriorityQueue<Integer>(Collections.reverseOrder());	//max heap
-		Queue<document> docs = new LinkedList<>();
+		Queue<document> docs = new LinkedList<>();														//1
+		PriorityQueue<Integer> importances = new PriorityQueue<Integer>(Collections.reverseOrder());	//2 max heap
 		
 		//우선순위큐와 큐에 값 넣기
 		for(int i = 0; i < priorities.length; i++) {
@@ -35,7 +35,7 @@ public class Printer {
 			int highestIPT = importances.peek();
 			
 			//해당 문서의 중요도와 대기열 중 가장 높은 중요도가 같다면 값 반환
-			if(docIPT == highestIPT) {
+			if(docIPT == highestIPT) {							//3
 				//해당 문서의 위치와 문제에서 주어진 위치가 같다면 순서 반환
 				if(doc.location == location) {
 					return answer;
