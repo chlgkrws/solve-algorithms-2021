@@ -14,8 +14,8 @@ public class PressKeypad {
 		boolean isRight = hand.equals("right") ?  true : false;
 		String result = "";
 		
-		int[] locateLeftHand = new int[] {0,3};
-		int[] locateRightHand = new int[] {2,3};
+		int[] locateLeftHand = new int[] {0,3};				//*
+		int[] locateRightHand = new int[] {2,3};			//#
 		
 		Map<Integer,Point> numState = new HashMap<>(); 
 		
@@ -41,7 +41,7 @@ public class PressKeypad {
 				result += "R";
 				locateRightHand[0] = numState.get(targetNumber).getX();
 				locateRightHand[1] = numState.get(targetNumber).getY();
-			}else {
+			}else {																		//2, 5, 8, 0
 				Point point = numState.get(targetNumber);
 				int leftManhattan = getManhattanDistance(point.getX(), point.getY(), locateLeftHand[0], locateLeftHand[1]);
 				int rightManhattan = getManhattanDistance(point.getX(), point.getY(), locateRightHand[0], locateRightHand[1]);
@@ -92,17 +92,4 @@ public class PressKeypad {
 			return y;
 		}
 	}
-	
-	public static void main(String[] args) {
-		Integer a= 10;
-		Integer b = a;
-		
-		System.out.println(a);
-		System.out.println(b);
-		
-		a = 20;
-		System.out.println(a);
-		System.out.println(b);
-	}
-
 }
