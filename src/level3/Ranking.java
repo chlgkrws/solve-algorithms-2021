@@ -44,7 +44,7 @@ public class Ranking {
 					break;
 				}
 			}
-			if(flag) answer++;				//모든 정점에서 갈 수 있는 정점을 찾은 경우
+			if(flag) answer++;								//모든 정점에서 갈 수 있는 정점을 찾은 경우
 		}
 		return answer;
 	}

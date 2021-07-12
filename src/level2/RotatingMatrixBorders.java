@@ -32,6 +32,7 @@ public class RotatingMatrixBorders {
     	return result;
     }
     
+    //1
     public int[] minusOneFromElement(int[] query) {
     	for(int i = 0; i < query.length; i++) {
     		query[i] -= 1;
@@ -39,25 +40,31 @@ public class RotatingMatrixBorders {
     	return query;
     }
     
+    //2
     public int getMinValue(int[] element, int[][] table) {
-    	List<int[]> rotatingList = getRotatingArray(element);
+    	List<int[]> rotatingList = getRotatingList(element);
     	
     	int tempFirst = table[rotatingList.get(0)[0]][rotatingList.get(0)[1]];
     	int min = Integer.MAX_VALUE;
+    	//4
     	for(int i = rotatingList.size() - 1; i > 0 ; i--) {
+    		
     		if(table[rotatingList.get(i)[0]][rotatingList.get(i)[1]] < min) {
     			min = table[rotatingList.get(i)[0]][rotatingList.get(i)[1]];
     		}
+    		
     		if(i == 1) {
     			table[rotatingList.get(i)[0]][rotatingList.get(i)[1]]  = tempFirst;
     			break;
     		}
+    		
     		table[rotatingList.get(i)[0]][rotatingList.get(i)[1]] = table[rotatingList.get(i - 1)[0]][rotatingList.get(i - 1)[1]];
     	}
     	return min;
     }
     
-    public List<int[]> getRotatingArray(int[] element) {
+    //3
+    public List<int[]> getRotatingList(int[] element) {
     	List<int[]> rotatingList = new ArrayList<>();
     	int x1 = element[0];
     	int y1 = element[1];
@@ -83,5 +90,4 @@ public class RotatingMatrixBorders {
     	
     	return rotatingList;
     }
-    
 }
