@@ -1,5 +1,22 @@
 package level2;
 
+<<<<<<< HEAD
+
+public class MenuRenewal {
+	/**
+	 * level 2
+	 * https://programmers.co.kr/learn/courses/30/lessons/72411
+	 * 메뉴 리뉴얼
+	 */
+	public String[] solution(String[] orders, int[] course) {
+		return new String[] {};
+	}
+	public static void main(String[] args) {
+		MenuRenewal m = new MenuRenewal();
+		m.solution(new String[] {"ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"}, new int[] {2,3,4});
+	}
+
+=======
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,4 +77,5 @@ public class MenuRenewal {
 		MenuRenewal a = new MenuRenewal();
 		a.solution(new String[] {"ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"}, new int[] {2,3,4});
 	}
+>>>>>>> 48d5b30465da4cc8cd57659e9ab18f22645b262c
 }

@@ -16,12 +16,10 @@ public class Tuple {
 	public int[] solution(String s) {
 		s = removeFirstAndLastBracket(s);
 		s = removeFirstAndLastBracket(s);
-		
-		
 		String[] elements = s.split("\\},\\{");
 		List<String[]> numbers = new ArrayList<>();
 		
-
+		
 		for(int i = 0; i < elements.length; i++) {
 			String[] element = elements[i].split(",");
 			numbers.add(element);
@@ -42,7 +40,6 @@ public class Tuple {
 					})
 					.collect(Collectors.toList());
 		
-		
 		LinkedHashSet<String> set = new LinkedHashSet<>();
 		
 		for(int i = 0; i < numbers.size(); i++) {
@@ -62,5 +59,4 @@ public class Tuple {
 		s = s.substring(0, s.length() - 1);
 		return s;
 	}
-
 }

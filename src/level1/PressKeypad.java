@@ -92,4 +92,9 @@ public class PressKeypad {
 			return y;
 		}
 	}
+	
+	public static void main(String[] args) {
+		double a = 120.9;
+		System.out.println((int)Math.floor(a));
+	}
 }
