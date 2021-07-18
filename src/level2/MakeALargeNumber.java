@@ -1,27 +1,34 @@
 package level2;
 
-import java.util.Arrays;
-
 public class MakeALargeNumber {
-    public static String solution(String number, int k) {
-        char[] result = new char[number.length() - k];
-        Stack<Character> stack = new Stack<>();
 
-        for(int i = 0; i < number.length(); i++) {
-            char c = number.charAt(i);
-            while(!stack.isEmpty() && stack.peek() < c && k-- > 0) {
-                stack.pop();
+    public String solution(String number, int k){
+        String origin = number;
+        Integer maxValue = 0;
+
+        for(int i = 0; i < k; i++){
+            maxValue = 0;
+            String temp = "";
+            for(int j = 0; j < origin.length(); j++){
+                StringBuilder target= new StringBuilder(origin);
+
+                target.deleteCharAt(j);
+                int targetValue = Integer.parseInt(target.toString()+"");
+                if(targetValue > maxValue){
+                    temp = target.toString();
+                }
+                maxValue = Integer.max(targetValue, maxValue);
             }
-            stack.push(c);
+            origin = temp;
         }
 
-        for(int i = 0; i < result.length; i++) {
-            result[i] = stack.get(i);
-        }
-        return new String(result);
+        return origin;
     }
 
     public static void main(String[] args) {
+//        MakeALargeNumber a = new MakeALargeNumber();
+//        System.out.println(a.solution("87654321", 3));
 
+        System.out.println(Integer.parseInt("001".toString()));
     }
 }
